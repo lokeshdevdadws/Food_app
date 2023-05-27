@@ -1,0 +1,433 @@
+/* CSS Document */
+:root {
+	--first: #39B06C;
+	--second: #11743B;
+	--third: #333333;
+	--fourth: #181818;
+	--circle: #11743B;
+	--circle2: #1E3525;
+	--icon-color: #515151;
+	--button1: #2FA25F;
+	--button2: #0B6D35;
+    --gray: #0f2027;
+    --dark-blue: #203a43;
+    --blue: #2c5364;
+    
+    --fs1: 1.266rem;
+    --fs2: 1.125rem;
+    --fs3: 1rem;
+    --fs4: .889rem;
+    
+    --sp1: 1.5rem;
+    --sp2: 1rem;
+    --sp3: .75rem;
+    --sp4: .5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: 'Helvetica', sans-serif;
+    font-size: var(--fs3);
+    color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.app-screen {
+    width: 375px !important;
+    height: 767px !important;
+    background: radial-gradient(circle at 0 0 , var(--circle2), var(--fourth) 50%);
+    border-radius: 0px;
+    position: relative;
+}
+
+.app-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px var(--sp2);
+}
+
+.app-header > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header > div > h2, .app-header > i {
+    font-size: 32px;
+	font-weight: bold;
+	margin: 0;
+	color: #fff;
+	padding-left: 10px;
+}
+
+.app-header > div > p {
+    font-size: var(--fs4);
+    color: rgba(255, 255, 255, .75);
+}
+
+.app-card-wrapper {
+    padding: var(--sp4) var(--sp2) var(--sp2) var(--sp2);
+}
+
+[type=radio] {
+  display: none;
+}
+
+#slider {
+  height: 15vw;
+  position: relative;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+#slider label {
+  margin: auto;
+  border-radius: 4px;
+  position: absolute;
+  left: 0; right: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#s1:checked ~ #slide3, 
+#s2:checked ~ #slide1, 
+#s3:checked ~ #slide1 {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+  transform: translate3d(0%,0,-100px);
+	
+}
+
+#s2:checked ~ #slide1, 
+#s3:checked ~ #slide2,
+#s1:checked ~ #slide2 {
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+  transform: translate3d(5%,0,-30px);
+}
+
+#s3:checked ~ #slide1,
+#s2:checked ~ #slide3,
+#s1:checked ~ #slide3 {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+  transform:  translate3d(9%,0,-50px);
+}
+#slide2 {
+	margin-top: 20px !important;
+}
+#slide1 {
+	margin-top: 40px !important;
+}
+
+.card-slider {
+  background: linear-gradient(to right , var(--first), var(--second) 70%);
+  width: 90%;
+  height: 196px;
+  border-radius: 20px !important;
+}
+
+.card-slider .card {
+	 background: linear-gradient(to right , var(--first), var(--second) 70%) !important;
+	 width: 100%;
+     color: #fff !important;
+	 padding: 10px !important;
+	 border-radius: 20px !important;
+}
+
+.card-slider .card h3 {
+    font-size: 18px;
+	font-weight: 700;
+	line-height: 1.5rem;
+    
+}
+
+.card-slider .card > .card-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	
+}
+
+.card img {
+	margin-left: 36px;
+}
+
+.card > .card-details > p {
+    font-size: 12px;
+    align-self: flex-end;
+	margin-left: 10px;
+	margin-bottom: 0;
+}
+
+.card > .top > p{
+	 font-size: 12px;
+    align-self: flex-end;
+	margin-right: 10px;
+	text-align: right;
+	margin-bottom: 0;
+}
+
+.content{
+	margin: 0px 10px !important;
+}
+
+.app-card-balance {
+    padding: 0 var(--sp2);
+}
+
+.app-card-balance > span {
+    font-size: var(--fs3);
+    color: rgba(255, 255, 255, .75);
+}
+
+.app-card-balance > h3 {
+    font-size: var(--fs1);
+}
+
+.app-upcoming-payments-wrapper {
+    padding: 0 var(--sp2);
+	
+}
+
+.app-upcoming-payments-wrapper > span {
+    font-size: var(--fs3);
+}
+
+.upcoming-payments {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--sp4);
+    margin-top: 50px;
+	
+}
+
+.upcoming-payments > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: var(--gray);
+    border-radius: 30px;
+    background: linear-gradient(to right , var(--third), var(--fourth) 80%);
+}
+
+.upcoming-payments > div > img {
+	    box-shadow: ;
+}
+
+.upcoming-payments > div > i {
+   font-size: var(--fs3); 
+}
+
+.upcoming-payments .text-content h4 {
+    margin-top: var(--sp4);
+    font-size: var(--fs2); 
+}
+
+.upcoming-payments .text-content p {
+	 margin-top: var(--sp4);
+     font-size: 11px; 
+	 color: #BBBBBB;
+}
+
+.upcoming-payments .text-content h3{
+	font-weight: bold;
+    font-size: var(--fs2); 
+	margin-top: 10px;
+}
+
+.icon-p{
+	margin: 0;
+	background-color: green;
+	padding: 4px 5px 0 5px;
+	border-radius: 50%;
+	font-size: 16px;
+    background: radial-gradient(circle at 0 0, var(--button1), var(--button2) 80%);
+}
+.app-navbar {
+    width: 100%;
+    padding: var(--sp3) var(--sp3);
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    opacity: .75;
+    border-radius: 0 0 20px 20px;
+}
+
+.app-navbar > a > i {
+    font-size: 24px;
+	font-weight: bold !important;
+	margin-bottom: 15px;
+	color: #BBBBBB;
+}
+
+.app-navbar > a > i:hover{
+	color: #fff;
+}
+
+.app-navbar .active {
+	background: radial-gradient(circle at 0 0, var(--first), var(--second) );
+	border-radius: 50%;
+	padding: 8px 10px 0 10px;
+	font-size: 24px;
+	font-weight: bold !important;
+	color: #fff;
+}
+.btn:hover {
+	color: #fff;
+	opacity: 0.9;
+}
+
+
+/*------- screen 2----*/
+
+.app-header-2 nav{
+	margin: 15px 0px;
+	
+}
+.app-header-2 nav i{
+	font-size: 20px !important;
+}
+.app-header-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px var(--sp2) 0;
+}
+.c-img {
+	position: relative;
+	margin-right: 0;
+}
+
+.app-card-wrapper-2 {
+	margin: 0;
+    padding: 0 var(--sp2) 0 var(--sp1);
+}
+
+.c-img {
+	top: 0px;
+}
+
+.content-info {
+	padding: 0 30px;
+	margin: 15px 0 0 0;
+}
+
+.content-info .text-content h4 {
+   
+    font-size: 18px; 
+	font-weight: bold;
+}
+
+.content-info .text-content p {
+     font-size: 12px; 
+	 color: #BBBBBB;
+	margin-right: 30px;
+}
+
+.upcoming-payments .text-content h3{
+	font-weight: bold;
+    font-size: var(--fs2); 
+	margin-top: 10px;
+}
+
+ .small-text {
+	font-size: 7px;
+	margin-bottom: 2px;
+}
+
+.button {
+	text-decoration: none;
+	color: #fff;
+	background: linear-gradient(to right , var(--first), var(--second) 70%);
+	padding: 12px 10px 12px 15px;
+	font-size: 14px;
+	border-radius: 0 20px 20px 20px;
+}
+
+
+.btn-i {
+	background: #fff;
+	border-radius: 50%;
+	color: #000;
+	padding: 5px;
+	margin-left: 7px;
+}
+
+.bottom-c {
+	margin-top: 40px !important;
+}
+
+
+.btn {
+	background: radial-gradient(circle at 0 0, #18BA5C, #128B43 80%);
+	color: #fff;
+    float: right;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    border-radius: 100%;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+	font-size: 20px;
+  }
+.app-navbar .btn{
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
+	margin-top: 0px;
+	font-size: 24px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 475px){
+	#slider {
+		width: 95%;
+		height: 35vh;
+	}
+	#s2:checked ~ #slide1, 
+#s3:checked ~ #slide2,
+#s1:checked ~ #slide2 {
+  transform: translate3d(7%,0,-30px);
+}
+
+#s3:checked ~ #slide1,
+#s2:checked ~ #slide3,
+#s1:checked ~ #slide3 {
+  transform:  translate3d(14%,0,-50px);
+}
+	
+}
+
+
+@media screen and (min-width: 391px) and (max-width: 475px){
+	.app-screen {
+		width: 414px !important;
+		height: 896px;
+	}
+	#slider {
+		width: 95%;
+		height: 32vh;
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 390px){
+	.app-screen {
+		width: 390px !important;
+		height: 844px;
+	}
+	#slider {
+		width: 95%;
+		height: 35vh;
+	}
+}
